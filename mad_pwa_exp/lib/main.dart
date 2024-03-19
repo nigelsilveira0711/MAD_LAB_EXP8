@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'AboutUs.dart';
 import 'Home.dart';
 import 'Profile.dart';
 import 'Dashboard.dart';
@@ -10,7 +11,7 @@ void main() {
     MaterialApp(
       home: HomePage(),
       debugShowCheckedModeBanner: false,
-      title: "Experiment 6",
+      title: "Experiment 7",
     ),
   );
 }
@@ -24,7 +25,8 @@ class HomePage extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/profile': (context) => Profile(),
-        '/dashboard': (context) => Dashboard()
+        '/dashboard': (context) => Dashboard(),
+        '/about': (context) => AboutUs()
       },
     );
   }

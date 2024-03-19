@@ -20,8 +20,18 @@ class _DashboardState extends State<Dashboard> {
     });
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Dashboard",
+          style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.red.shade900,
+        foregroundColor: Colors.white,
+      ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               "$username",
@@ -29,7 +39,13 @@ class _DashboardState extends State<Dashboard> {
                 fontSize: 30.0,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.red.shade900,
+                  backgroundColor: Colors.white),
               onPressed: () {
                 Navigator.pushReplacementNamed(
                   context,

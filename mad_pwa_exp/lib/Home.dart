@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mad_pwa_exp/navbar.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -6,18 +7,22 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavBar(),
       appBar: AppBar(
-        title: Text("Hello World!"),
+        title: const Text(
+          "Hello World!",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.red.shade900,
         foregroundColor: Colors.white,
-        titleTextStyle: TextStyle(fontSize: 30),
+        titleTextStyle: const TextStyle(fontSize: 30),
         centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(
-            child: const Text(
+          const Center(
+            child: Text(
               "Welcome to MAD Lab",
               style: TextStyle(
                   fontSize: 40, color: Colors.black, fontFamily: 'Tinos'),
@@ -26,24 +31,28 @@ class Home extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/profile');
-                      print("Logging in");
-                    },
-                    child: const Text("Click to login", style: TextStyle(
-                      fontSize: 20
-                    ),)
-                ),),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.red.shade900,
+                      backgroundColor: Colors.white),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/profile');
+                    print("Logging in");
+                  },
+                  child: const Text(
+                    "Click to login",
+                    style: TextStyle(fontSize: 20),
+                  )),
+            ),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         backgroundColor: Colors.red.shade900,
         foregroundColor: Colors.white,
-        shape: CircleBorder(),
+        shape: const CircleBorder(),
       ),
     );
   }

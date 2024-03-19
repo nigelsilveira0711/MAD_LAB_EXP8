@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert' as convert;
 
+import 'package:mad_pwa_exp/navbar.dart';
+
 class Profile extends StatefulWidget {
   const Profile({super.key});
 
@@ -51,6 +53,16 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        drawer: NavBar(),
+        appBar: AppBar(
+          title: const Text(
+            "Profile",
+            style: TextStyle(color: Colors.white),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.red.shade900,
+          foregroundColor: Colors.white,
+        ),
         body: Center(
           child: Padding(
             padding: EdgeInsets.all(16.0),
@@ -123,6 +135,9 @@ class _ProfileState extends State<Profile> {
                 ),
                 Center(
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        foregroundColor: Colors.red.shade900,
+                        backgroundColor: Colors.white),
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, '/dashboard',
                           arguments: {
